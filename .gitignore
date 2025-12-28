@@ -1,0 +1,4 @@
+server/appsettings.json
+server/bin/
+server/obj/
+.DS_Store

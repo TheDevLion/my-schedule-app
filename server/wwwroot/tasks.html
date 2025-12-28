@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-title="titleTasks">MyTasks</title>
+    <link rel="icon" type="image/svg+xml" href="assets/tasks-list-svgrepo-com.svg">
+    <script src="js/helper.js"></script>
+    <script src="js/tasks.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <div class="top-actions">
+        <button id="lang_toggle" type="button" aria-label="Change language">EN</button>
+        <button id="signoff_button" type="button" data-i18n="signOff">Sign off</button>
+    </div>
+
+    <h1 data-i18n="appTitle">MyTasks</h1>
+
+    <input type="date" id="input_date" onchange="changeDate()"/>
+
+    <div id="commands_section">
+        <div>
+            <input type="text" id="task_input_add" data-i18n-placeholder="taskPlaceholder"/>
+            <button id="add_task_button" onclick="addTask()" data-i18n="addTask">Adicionar</button>
+        </div>
+        <div>
+            <button onclick="pauseAllTasks()" id="pause_all_button" data-i18n="pauseAll" disabled>Pausar tudo</button>
+        </div>
+    </div>
+
+
+    <main>
+        <table border="1" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th data-i18n="tableTitle">Título</th>
+                    <th data-i18n="tableAction">Ação</th>
+                    <th data-i18n="tableHistory">Histórico</th>
+                    <th style="display: none;"></th>
+                    <th data-i18n="tableTotal">Total</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </main>
+    
+    <script>
+        document.getElementById("input_date").value = getCurrentDayStr()
+    </script>
+</body>
+</html>
